@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profil Lia Nurlaila | Teknik Informatika</title>
+
+    <meta name="description"
+          content="Website profil pribadi Lia Nurlaila, mahasiswa Teknik Informatika UIN Sunan Gunung Djati Bandung.">
+
+    <meta property="og:title"
+          content="Profil Lia Nurlaila | Teknik Informatika">
+
+    <meta property="og:description"
+          content="Profil pribadi, biodata, minat, perjalanan kuliah, dan mata kuliah Lia Nurlaila.">
+
+    <meta property="og:image"
+          content="images/foto-lia.jpg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #eef7ff, #fff0f7);
+            color: #344054;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background:
+                radial-gradient(circle at top left, #cfe9ff, transparent 35%),
+                radial-gradient(circle at bottom right, #ffd8e8, transparent 35%);
+        }
+
+        header .welcome {
+            color: #6c8ebf;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-size: 52px;
+            color: #41658a;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            max-width: 700px;
+            font-size: 18px;
+            color: #667085;
+        }
+
+        .header-button {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 12px 25px;
+            background: #6f9dcc;
+            color: white;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .header-button:hover {
+            background: #e39ab8;
+            transform: translateY(-2px);
+        }
+
+        /* ================= NAV ================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 3px 15px rgba(80, 100, 130, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 15px;
+        }
+
+        nav a {
+            color: #55708f;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #e8f3ff;
+            color: #d87fa2;
+        }
+
+        /* ================= MAIN ================= */
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.9);
+            margin-bottom: 35px;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(80, 100, 130, 0.08);
+        }
+
+        section h2 {
+            color: #41658a;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        section h3 {
+            color: #d47f9f;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        /* ================= PROFILE ================= */
+
+        .profile {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .profile img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 7px solid #e4f1ff;
+            box-shadow: 0 5px 20px rgba(100, 130, 160, 0.15);
+        }
+
+        /* ================= BIODATA ================= */
+
+        .biodata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .biodata-card {
+            background: #f7fbff;
+            padding: 18px;
+            border-radius: 15px;
+            border-left: 4px solid #8bb6df;
+        }
+
+        .biodata-card strong {
+            color: #41658a;
+        }
+
+        /* ================= MINAT ================= */
+
+        .interest-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .interest {
+            padding: 10px 18px;
+            background: #fff0f6;
+            color: #c46f92;
+            border-radius: 20px;
+        }
+
+        /* ================= STATS ================= */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 25px 15px;
+            background: linear-gradient(135deg, #edf7ff, #fff1f7);
+            border-radius: 18px;
+        }
+
+        .stat-card .number {
+            font-size: 30px;
+            font-weight: bold;
+            color: #527da7;
+        }
+
+        .stat-card p {
+            color: #667085;
+        }
+
+        /* ================= MOTTO ================= */
+
+        blockquote {
+            padding: 25px;
+            background: #fff4f8;
+            border-left: 5px solid #df91ae;
+            border-radius: 10px;
+            font-size: 18px;
+            font-style: italic;
+            color: #667085;
+        }
+
+        /* ================= TABLE ================= */
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 950px;
+            margin-top: 20px;
+        }
+
+        th {
+            background: #709bc5;
+            color: white;
+            padding: 13px;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e5eaf0;
+        }
+
+        tr:nth-child(even) {
+            background: #f7fbff;
+        }
+
+        tr:hover {
+            background: #fff2f7;
+        }
+
+        .total {
+            margin-top: 15px;
+            padding: 15px;
+            background: #eef7ff;
+            border-radius: 12px;
+            font-weight: bold;
+            color: #41658a;
+        }
+
+        /* ================= LINKS ================= */
+
+        .link-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 22px;
+            background: #6f9dcc;
+            color: white;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .link-button:hover {
+            background: #d98eac;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: #41658a;
+            color: white;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 768px) {
+
+            header h1 {
+                font-size: 38px;
+            }
+
+            .profile {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile img {
+                margin: auto;
+            }
+
+            .biodata {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            nav ul {
+                gap: 3px;
+            }
+
+            nav a {
+                font-size: 14px;
+                padding: 6px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header id="beranda">
+
+        <p class="welcome">Hai, selamat datang di profilku 👋</p>
+
+        <h1>Lia Nurlaila</h1>
+
+        <p>
+            Mahasiswa Teknik Informatika yang sedang belajar,
+            berkembang, dan mengenal lebih banyak hal di dunia teknologi,
+            pemrograman, dan pengembangan web.
+        </p>
+
+        <a href="#tentang" class="header-button">
+            Kenalan Yuk →
+        </a>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav aria-label="Navigasi utama">
+
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#biodata">Biodata</a></li>
+            <li><a href="#minat">Minat</a></li>
+            <li><a href="#akademik">Akademik</a></li>
+            <li><a href="#github">GitHub</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <!-- TENTANG SAYA -->
+
+        <section id="tentang">
+
+            <div class="profile">
+
+                <div>
+                    <img
+                        src="images/foto-lia.jpg"
+                        alt="Foto profil Lia Nurlaila"
+                    >
+                </div>
+
+                <div>
+
+                    <h2>Tentang Saya</h2>
+
+                    <p>
+                        Halo! Nama aku Lia Nurlaila, mahasiswa Teknik
+                        Informatika di UIN Sunan Gunung Djati Bandung.
+                    </p>
+
+                    <p>
+                        Aku termasuk orang yang awalnya cukup pendiam
+                        ketika baru bertemu dengan orang lain. Tapi setelah
+                        sudah mengenal dan merasa nyaman, biasanya jadi
+                        lebih banyak ngobrol dan lebih terbuka.
+                    </p>
+
+                    <p>
+                        Saat ini aku sedang menjalani semester 5 dan terus
+                        mencoba mengembangkan kemampuan di bidang teknologi,
+                        pemrograman, desain, dan pengembangan website.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BIODATA -->
+
+        <section id="biodata">
+
+            <h2>Biodata Singkat</h2>
+
+            <div class="biodata">
+
+                <div class="biodata-card">
+                    <strong>Nama</strong>
+                    <p>Lia Nurlaila</p>
+                </div>
+
+                <div class="biodata-card">
+                    <strong>NIM</strong>
+                    <p>1247050039</p>
+                </div>
+
+                <div class="biodata-card">
+                    <strong>Status</strong>
+                    <p>Mahasiswa</p>
+                </div>
+
+                <div class="biodata-card">
+                    <strong>Program Studi</strong>
+                    <p>Teknik Informatika</p>
+                </div>
+
+                <div class="biodata-card">
+                    <strong>Fakultas</strong>
+                    <p>Sains dan Teknologi</p>
+                </div>
+
+                <div class="biodata-card">
+                    <strong>Universitas</strong>
+                    <p>UIN Sunan Gunung Djati Bandung</p>
+                </div>
+
+                <div class="biodata-card">
+                    <strong>Semester</strong>
+                    <p>5</p>
+                </div>
+
+                <div class="biodata-card">
+                    <strong>Domisili</strong>
+                    <p>Jawa Barat, Indonesia</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MINAT -->
+
+        <section id="minat">
+
+            <h2>Minat Saya</h2>
+
+            <p>
+                Beberapa hal yang menarik perhatian dan ingin terus
+                aku pelajari:
+            </p>
+
+            <br>
+
+            <div class="interest-list">
+
+                <span class="interest">Web Development</span>
+                <span class="interest">Pemrograman</span>
+                <span class="interest">Teknologi</span>
+                <span class="interest">UI Design</span>
+                <span class="interest">Fotografi</span>
+                <span class="interest">Desain Konten</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- FAKTA / STATISTIK -->
+
+        <section>
+
+            <h2>Perjalanan Kuliahku</h2>
+
+            <p>
+                Sedikit gambaran tentang perjalanan akademikku saat ini.
+            </p>
+
+            <br>
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <div class="number">5</div>
+                    <p>Semester Berjalan</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="number">8</div>
+                    <p>Mata Kuliah</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="number">23</div>
+                    <p>Total SKS</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="number">∞</div>
+                    <p>Semangat Belajar</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MOTTO -->
+
+        <section>
+
+            <h2>Motto Hidup</h2>
+
+            <blockquote>
+                "Slow progres is better than no progres."
+            </blockquote>
+
+        </section>
+
+
+        <!-- AKADEMIK -->
+
+        <section id="akademik">
+
+            <h2>Mata Kuliah</h2>
+
+            <p>
+                Berikut adalah mata kuliah yang sedang ditempuh,
+                termasuk mata kuliah yang tercatat pada semester berbeda.
+            </p>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>No</th>
+                            <th>Mata Kuliah</th>
+                            <th>Kelas</th>
+                            <th>SKS</th>
+                            <th>SMT</th>
+                            <th>Ruang</th>
+                            <th>Waktu</th>
+                            <th>Dosen</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>1</td>
+                            <td>20100470501024 - Manajemen Basis Data</td>
+                            <td>B</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>R.4.09</td>
+                            <td>Senin 07:00-09:30</td>
+                            <td>Wildan Budiawan Zulfikar S.T., M.Kom.</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>20100470501026 - Jaringan Komputer</td>
+                            <td>B</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>R.4.10</td>
+                            <td>Kamis 07:00-09:30</td>
+                            <td>Cecep Nurul Alam M.T.</td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>20100470501030 - Pengembangan Aplikasi Web</td>
+                            <td>B</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>Gedung R.3.9</td>
+                            <td>Jumat 09:30-12:00</td>
+                            <td>Muhammad Deden Firdaus ST, M.Kom</td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>20100470501032 - Interaksi Manusia dan Komputer</td>
+                            <td>B</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>R.4.01</td>
+                            <td>Rabu 09:30-12:00</td>
+                            <td>Dr. Cepy Slamet S.T., M.Kom.</td>
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td>20100470501034 - Manajemen Proyek Perangkat Lunak</td>
+                            <td>B</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>R.4.01</td>
+                            <td>Senin 09:30-12:00</td>
+                            <td>Agung Wahana S.E., M.T.</td>
+                        </tr>
+
+                        <tr>
+                            <td>6</td>
+                            <td>20100470501028 - Pengembangan Aplikasi Mobile</td>
+                            <td>B</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>R.4.12</td>
+                            <td>Kamis 12:40-15:10</td>
+                            <td>H. Aldy Rialdy Atmadja M.T.</td>
+                        </tr>
+
+                        <tr>
+                            <td>7</td>
+                            <td>Inteligensia Buatan</td>
+                            <td>A</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>R.4.10</td>
+                            <td>Selasa 15:30-18:00</td>
+                            <td>Jumadi ST., M.Cs.</td>
+                        </tr>
+
+                        <tr>
+                            <td>8</td>
+                            <td>20100470503005 - ICT dan Islam</td>
+                            <td>A</td>
+                            <td>2</td>
+                            <td>7</td>
+                            <td>R.4.11</td>
+                            <td>Selasa 12:40-14:20</td>
+                            <td>Eva Nurlatifah M.Sc.</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="total">
+                Total SKS: 23 SKS
+            </div>
+
+        </section>
+
+
+        <!-- GITHUB -->
+
+        <section id="github">
+
+            <h2>GitHub Saya</h2>
+
+            <p>
+                Beberapa project dan hasil belajar nantinya bisa
+                dilihat melalui akun GitHub.
+            </p>
+
+            <a
+                href="https://github.com/lynrlla"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-button"
+            >
+                Kunjungi GitHub Saya →
+            </a>
+
+        </section>
+
+
+        <!-- KONTAK -->
+
+        <section id="kontak">
+
+            <h2>Hubungi Saya</h2>
+
+            <p>
+                Untuk informasi atau keperluan lainnya, kamu bisa
+                menghubungi melalui media yang tersedia.
+            </p>
+
+            <h3>Email</h3>
+
+            <p>
+                <a href="mailto:nrlailalia@gmail.com">
+                    nrlailalia@gmail.com
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Lia Nurlaila
+        </p>
+
+        <p>
+            Personal Profile Website · Teknik Informatika
+        </p>
+
+    </footer>
+
+</body>
+</html>
